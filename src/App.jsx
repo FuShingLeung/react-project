@@ -12,7 +12,7 @@ import theme from './theme/theme';
 import Layout from './components/Layout';
 
 // Import pages
-import List from './pages/List';
+import ExercisesList from './pages/List';
 import Add from './pages/Add';
 import Update from './pages/Update';
 import NotFound from './pages/NotFound';
@@ -26,9 +26,9 @@ function App() {
       <ThemeProvider theme={theme}>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<List />} />
+            <Route index element={<ExercisesList />} />
             <Route path="/add" element={<Add />} />
-            <Route path="/update" element={<Update />} />
+            <Route path="/update/:id" element={<Update />} />
             <Route path="/*" element={<NotFound />} />
           </Route>
         </Routes>
