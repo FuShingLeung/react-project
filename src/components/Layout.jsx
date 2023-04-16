@@ -1,19 +1,19 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
-import TempHeader from './TempHeader'
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import TempHeader from './TempHeader';
 
 function Layout() {
   return (
     <>
       <header>
         <h1>Exercises App</h1>
-        <TempHeader/>
+        <TempHeader />
       </header>
       <main>
-
+        <Outlet />
       </main>
     </>
-  )
+  );
 }
 
-export default Layout
+export default Layout;

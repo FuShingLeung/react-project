@@ -1,10 +1,13 @@
 import React from 'react';
-import TempHeader from '../components/TempHeader';
+import { Button } from '@mui/material';
 
 function List() {
   return (
     <>
       <div>List</div>
+      <Button variant="text">Text</Button>
+      <Button variant="contained">Contained</Button>
+      <Button variant="outlined">Outlined</Button>
     </>
   );
 }
