@@ -14,7 +14,7 @@ import Layout from './components/Layout';
 import { ExercisesProvider } from './components/contexts/exercise.context';
 
 // Import pages
-import ExercisesList from './pages/List';
+import ExercisesListPage from './pages/List';
 import Add from './pages/Add';
 import Update from './pages/Update';
 import NotFound from './pages/NotFound';
@@ -29,7 +29,7 @@ function App() {
         <ExercisesProvider>
           <Routes>
             <Route path="/" element={<Layout />}>
-              <Route index element={<ExercisesList />} />
+              <Route index element={<ExercisesListPage />} />
               <Route path="/add" element={<Add />} />
               <Route path="/update/:id" element={<Update />} />
               <Route path="/*" element={<NotFound />} />
