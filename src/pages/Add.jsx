@@ -1,9 +1,14 @@
 import React from 'react';
+import Typography from '@mui/material/Typography';
+import ExerciseForm from '../components/forms/ExerciseForm';
 
 function Add() {
   return (
     <>
-      <div>Add</div>
+      <Typography variant="h2" component="h1">
+        Add Exercise
+      </Typography>
+      <ExerciseForm />
     </>
   );
 }
