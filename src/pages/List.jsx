@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 // import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 
@@ -14,23 +14,14 @@ import EditIcon from '@mui/icons-material/Edit';
 import Typography from '@mui/material/Typography';
 import { Delete } from '@mui/icons-material';
 
+import { ExercisesContext } from '../components/contexts/exercise.context';
+
 function ExercisesList() {
-  const exercises = [
-    {
-      _id: 1,
-      name: 'Incline Dumbbell Bench Press',
-      muscleGroup: 'Chest',
-      avatar_url:
-        'https://static.strengthlevel.com/images/illustrations/incline-dumbbell-bench-press-1000x1000.jpg',
-    },
-    {
-      _id: 2,
-      name: 'Seated Dumbbell Shoulder Press',
-      muscleGroup: 'Shoulder',
-      avatar_url:
-        'https://static.strengthlevel.com/images/illustrations/seated-dumbbell-shoulder-press-1000x1000.jpg',
-    },
-  ];
+  const { exercises, fetchExercises } = useContext(ExercisesContext);
+
+  useEffect(() => {
+    fetchExercises();
+  }, [fetchExercises]);
   return (
     <>
       <Typography variant="h1" component="h2">

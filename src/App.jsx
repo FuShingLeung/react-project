@@ -11,6 +11,8 @@ import theme from './theme/theme';
 
 import Layout from './components/Layout';
 
+import { ExercisesProvider } from './components/contexts/exercise.context';
+
 // Import pages
 import ExercisesList from './pages/List';
 import Add from './pages/Add';
@@ -24,14 +26,16 @@ function App() {
     <Router>
       <CssBaseline />
       <ThemeProvider theme={theme}>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<ExercisesList />} />
-            <Route path="/add" element={<Add />} />
-            <Route path="/update/:id" element={<Update />} />
-            <Route path="/*" element={<NotFound />} />
-          </Route>
-        </Routes>
+        <ExercisesProvider>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<ExercisesList />} />
+              <Route path="/add" element={<Add />} />
+              <Route path="/update/:id" element={<Update />} />
+              <Route path="/*" element={<NotFound />} />
+            </Route>
+          </Routes>
+        </ExercisesProvider>
       </ThemeProvider>
     </Router>
   );
